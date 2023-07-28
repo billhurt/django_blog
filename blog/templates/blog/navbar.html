@@ -1,0 +1,25 @@
+<style>
+  .navbar-toggler:focus,
+  .navbar-toggler:active,
+  .navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-dark d-flex h-100 mx-auto flex-column">
+  <div class="container">
+    <a class="navbar-brand text-white" href="{% url 'blog:index' %}">billhurt.com</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon navbar-dark"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link text-white" href="{% url 'blog:index' %}">Home</a>
+        <a class="nav-link text-white" href="{% url 'blog:posts' %}">Posts</a>
+        <a class="nav-link text-white" href="{% url 'blog:contactme' %}">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>

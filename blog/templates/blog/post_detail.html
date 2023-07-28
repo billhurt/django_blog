@@ -1,0 +1,61 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container my-3">
+    <h1>{{post.title}}</h1>
+    <article class="py-3">
+        <p>{{post.content}}</p>
+        <p class="fs-6 fw-bolder">This post was created on - {{post.created_at}}</p>
+    </article>
+
+    <hr class="border border-light border-2 opacity-50">
+
+    <h5>Please add your comment below:</h5>
+
+    {% if new_comment %}
+    <p>Thanks for your comment! It's been submitted for moderation.</p>
+    {% else %}
+
+    <form method="post">
+
+        <div class="row my-3">
+            <div class="col-md-12">
+                {% csrf_token %}
+                {{ comment_form | crispy }}
+                <button type="submit" class="btn btn-secondary">Add comment</button>
+            </div>
+        </div>
+
+    </form>
+
+    {% if not post.comments.all %}
+    <p>No comments yet</p>
+    {% else %}
+    {% for comment in post.comments.all %}
+    {% if comment.active %}
+    <strong>{{ comment.name }} commented on - {{ comment.created_at }} </strong>
+    <br />
+    <br />
+    {{ comment.body }}
+    <br />
+    <br />
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endif %}
+
+
+    {% if post.get_previous_by_created_at %}
+    <a href="{% url 'blog:post_detail' post.get_previous_by_created_at.slug %}"
+        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover py-3">
+        <p>Previous post</p>
+    </a>
+    {% endif %}
+    {% if post.get_next_by_created_at %}
+    <a href="{% url 'blog:post_detail' post.get_next_by_created_at.slug %}"
+        class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover py-3">
+        <p>Next post</p>
+    </a>
+    {% endif %}
+</div>
+{% endblock %}

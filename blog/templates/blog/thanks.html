@@ -1,0 +1,7 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="container justify-content-center d-flex flex-column flex-sm-row">
+    <p class="p-5">Thanks for your message. I'll be in touch! Check out some more posts <a href={% url 'blog:posts' %}
+            class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">here.</a></p>
+</div>
+{% endblock %}

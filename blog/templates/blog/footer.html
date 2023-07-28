@@ -1,0 +1,16 @@
+{% load static %}
+{% load bootstrap_icons %}
+<link rel="stylesheet" href="{% static 'bootstrap_icons/css/bootstrap_icons.css' %}">
+<footer>
+    <div class="d-flex flex-column flex-sm-row justify-content-center py-4 my-4 border-top">
+        <p>&nbsp;&copy; Bill Hurt</p>
+        <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a href="https://twitter.com/hurtylfc"><svg class="bi" width="24"
+                        height="24">{% bs_icon 'twitter' color='white' %}</svg></a></li>
+            <li class="ms-3"><a href="https://github.com/billhurt"><svg class="bi" width="24"
+                        height="24">{% bs_icon 'github' color='white' %}</svg></a></li>
+            <li class="ms-3"><a href="https://www.linkedin.com/in/william-hurt-039956aa/"><svg class="bi" width="24"
+                        height="24">{% bs_icon 'linkedin' color='white' %}</svg></a></li>
+        </ul>
+    </div>
+</footer>

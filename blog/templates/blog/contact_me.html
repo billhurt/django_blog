@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container my-3">
+    <h1 class="text-center">Contact Me</h1>
+
+    <h5 class="py-3">Get in touch - send me a message using the form below. Cheers!</h5>
+</div>
+
+<form method="post">
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-md-12">
+                {% csrf_token %}
+                {% crispy form %}
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<body>
+    <div class="container">
+    <main class="justify-content-center">
+        <h1 class="text-center py-3">Welcome to <strong>billhurt.com</strong></h1>
+        <img style="max-width:80%;" src="{% static 'blog/images/header_pic.jpg' %}" class="img-fluid img-max rounded mx-auto d-block" alt="A photograph showing cloud buildup over Long Island, NY - from the flight deck of an airliner.">
+        <h5 class="my-3">My name's Bill and I develop websites, fly aeroplanes and listen to heavy metal.</h5>
+        <p class="my-3">On this site you can read my blog, check out some of the work I've been doing and you can also get in touch with me via the <a href="{% url 'blog:contactme' %}" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Contact</a> page - be it work related or for any other purpose.</p>
+        <p>I hope to continue posting on this blog as it's naff when people have a blog but never keep it up-to-date.</p>
+        <p>Check out my blog posts
+            <a href="{% url 'blog:posts' %}" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">here.</a> Let me know what you think of them via the comments section.
+        </p>
+        <p>Catch you soon!</p>
+    </main>
+</div>
+</body>
+{% endblock %}
